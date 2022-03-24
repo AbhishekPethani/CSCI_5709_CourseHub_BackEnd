@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-const mongoDBUrl = 'mongodb+srv://abhishek:abhishek@cluster0.2spzc.mongodb.net/Tutorial-6?retryWrites=true&w=majority';
+const mongoDBUrl = 'mongodb+srv://abhishek:abhishek@cluster0.2spzc.mongodb.net/CourseHub?retryWrites=true&w=majority';
 mongoose.connect(mongoDBUrl, { useNewUrlParser: true})
 .then(() => {
     console.log("Connected to mongoDB");
