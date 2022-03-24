@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-var cors = require('cors')
-const reviewRoute = require('./routes/api/reviews')
+var cors = require('cors');
+const reviewRoute = require('./routes/api/reviews');
+const courseRoute = require('./routes/api/courses');
  
 const app = express();
 app.use(cors())
@@ -17,6 +18,7 @@ mongoose.connect(mongoDBUrl, { useNewUrlParser: true})
     console.log("mongoDB connection failed", error);
 })
 
-app.use("/", reviewRoute);
+app.use("/reviews", reviewRoute);
+app.use("/courses", courseRoute);
 
 module.exports = app;
