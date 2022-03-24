@@ -7,7 +7,7 @@ router.use(bodyParser.json());
 
 const reviews = require('../../models/courseReview')
 
-router.get("/reviews/:courseName", (req, res) => { 
+router.get("/:courseName", (req, res) => { 
     // fetch all the review for specified course from the database
     reviews.find({courseName: req.params.courseName}).exec().then(result => {
         if(! result.length) {
@@ -30,7 +30,7 @@ router.get("/reviews/:courseName", (req, res) => {
     })
 })
 
-router.post("/reviews/add-review", (req, res) => {
+router.post("/add-review", (req, res) => {
     // extract review's data from request's body
     const courseName = req.body.courseName
     const userName = req.body.userName
@@ -59,7 +59,7 @@ router.post("/reviews/add-review", (req, res) => {
     })
 })
 
-router.delete('/reviews/delete-review/:id', (req, res) => {
+router.delete('/delete-review/:id', (req, res) => {
     // delete specified review 
     reviews.findByIdAndDelete(req.params.id).then((review) => {
         if(!review){
