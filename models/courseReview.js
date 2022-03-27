@@ -1,3 +1,6 @@
+/*=======================================================
+ Author: [Abhishek Pareshbhai Pethani] (ab823206@dal.ca)
+========================================================= */
 const mongoose = require('mongoose')
 
 const courseReviewSchema = {
