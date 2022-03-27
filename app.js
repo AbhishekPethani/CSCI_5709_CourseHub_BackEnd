@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+
 var cors = require('cors');
 const reviewRoute = require('./routes/api/reviews');
 const courseRoute = require('./routes/api/courses');
 const routes = require("./routes");
+const wishilistRoutes = require('./routes/api/WishlistRoutes');
 
 const app = express();
 app.use(cors())
@@ -25,6 +27,7 @@ app.use('/images', express.static('images'));
 app.use("/reviews", reviewRoute);
 app.use("/courses", courseRoute);
 app.use("/admin", routes);
+app.use("/wishlist", wishilistRoutes);
 
 
 module.exports = app;
