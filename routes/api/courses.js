@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
         return res.status(200).json({
             message: "Courses retrieved successfully!",
             success: true,
-            reviews: result
+            courses: result
         })
     }).catch(error => {
         console.log(error)

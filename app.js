@@ -19,8 +19,12 @@ mongoose.connect(mongoDBUrl, { useNewUrlParser: true })
         console.log("mongoDB connection failed", error);
     })
 
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
+
 app.use("/reviews", reviewRoute);
 app.use("/courses", courseRoute);
 app.use("/admin", routes);
+
 
 module.exports = app;
