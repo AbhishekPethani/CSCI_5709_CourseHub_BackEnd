@@ -1,3 +1,7 @@
+/*=======================================================
+ Author: [Aditya Bakshi] (aditya.bakshi@dal.ca)
+========================================================= */
+
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')

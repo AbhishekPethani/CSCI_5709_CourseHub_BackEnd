@@ -1,3 +1,7 @@
+/*=======================================================
+ Author: [Aditya Bakshi] (aditya.bakshi@dal.ca)
+========================================================= */
+
 const mongoose = require('mongoose')
 
 const courseDetailsSchema = {
@@ -8,7 +12,8 @@ const courseDetailsSchema = {
     coursePrice : Number,
     courseImage : String,
     courseAuthor : String,
-    purchasedBy : Array
-}
+    purchasedBy : Array,
+    courseDetails : String
+};
 
 module.exports = mongoose.model("Courses", courseDetailsSchema);
