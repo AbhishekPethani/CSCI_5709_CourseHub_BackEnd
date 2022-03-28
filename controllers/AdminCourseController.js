@@ -3,6 +3,7 @@ const CourseModel = require("../models/AdminCourseModel");
 exports.list = async (req, res, next) => {
   try {
     const courses = await CourseModel.find().exec();
+    console.log(courses)
     const transformedCourses = courses.map((course) => course.transform());
     res.json(transformedCourses);
   } catch (error) {

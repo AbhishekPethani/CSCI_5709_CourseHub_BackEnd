@@ -6,10 +6,13 @@ const router = express.Router()
 router.use(bodyParser.json());
 
 const wishlistCollection = require("../../models/Wishlist");
+const courses = require('../../models/courseDetails');
+
 const app = require('../../app');
 const { routes } = require('../../app');
+const CourseDetails = require('../../models/courseDetails');
 
-router.get("/:userId", (req, res) => {
+router.get("/:userId", async (req, res) => {    
     // retrieve all the wishlisted courses of user with userId provided in the url
     const userId = req.params.userId;
     wishlistCollection.find({userId: userId}).exec().then(result => {
@@ -23,6 +26,20 @@ router.get("/:userId", (req, res) => {
             success: false
         })
     });
+});
+
+router.get("/course/:courseId", async(req, res) => {
+    courses.findById(req.params.courseId).then(result => {
+        return res.status(200).json({
+            success: true,
+            course: result
+        });
+    }).catch(error => {
+        return res.status(500).json({
+            message: "Internal Server Error.",
+            success: false
+        })
+    })
 });
 
 router.post("/add", (req, res) => {
