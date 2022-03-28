@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const router = express.Router()
 router.use(bodyParser.json());
 
-const courses = require('../../models/CourseDetails');
+const courses = require('../../models/courseDetails');
 
 router.get("/", (req, res) => { 
     // fetch all courses from the database
