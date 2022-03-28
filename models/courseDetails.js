@@ -7,7 +7,8 @@ const courseDetailsSchema = {
     courseDescription : String,
     coursePrice : Number,
     courseImage : String,
-    courseAuthor : String
+    courseAuthor : String,
+    purchasedBy : Array
 }
 
 module.exports = mongoose.model("Courses", courseDetailsSchema);
