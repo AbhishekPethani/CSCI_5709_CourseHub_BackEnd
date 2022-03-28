@@ -6,11 +6,11 @@ const router = express.Router()
 router.use(bodyParser.json());
 
 const wishlistCollection = require("../../models/Wishlist");
-const courses = require('../../models/CourseDetails');
+const courses = require('../../models/courseDetails');
 
 const app = require('../../app');
 const { routes } = require('../../app');
-const CourseDetails = require('../../models/CourseDetails');
+const CourseDetails = require('../../models/courseDetails');
 
 router.get("/:userId", async (req, res) => {    
     // retrieve all the wishlisted courses of user with userId provided in the url
