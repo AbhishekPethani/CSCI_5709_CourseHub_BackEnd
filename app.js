@@ -2,15 +2,24 @@ const express = require("express");
 const mongoose = require("mongoose");
 const reviewRoute = require("./routes/api/reviews");
 const courseRoute = require("./routes/api/courses");
-const adminCourseRoute = require("./routes/AdminCourseRoute");
-const adminUserRoute = require("./routes/AdminUserRoute");
+const adminCourseRoute = require("./routes/api/AdminCourseRoute");
+const adminUserRoute = require("./routes/api/AdminUserRoute");
 const wishilistRoutes = require("./routes/api/WishlistRoutes");
 const userRoute = require("./routes/api/users");
 const couponsRoute = require("./routes/api/coupons");
+const cors = require("cors");
+
+const options = {
+  allowedHeaders: ["Origin", "Content-Type", "Accept", "Authorization"],
+  origin: "*",
+  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+};
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors(options));
 
 console.log(adminCourseRoute)
 const mongoDBUrl = "mongodb+srv://abhishek:abhishek@cluster0.2spzc.mongodb.net/CourseHub?retryWrites=true&w=majority";
@@ -28,11 +37,10 @@ app.use("/images", express.static("images"));
 
 app.use("/reviews", reviewRoute);
 app.use("/courses", courseRoute);
-// app.use("/admin", routes);
 app.use("/wishlist", wishilistRoutes);
 app.use("/authenticate", userRoute);
 app.use("/coupons", couponsRoute);
-app.use("admin/course", adminCourseRoute);
-app.use("admin/user", adminUserRoute);
+app.use("/admin/course", adminCourseRoute);
+app.use("/admin/user", adminUserRoute);
 
 module.exports = app;
