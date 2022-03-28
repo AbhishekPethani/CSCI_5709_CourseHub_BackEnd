@@ -1,5 +1,5 @@
 const express = require('express');
-const userController = require('../controllers/AdminUserController');
+const userController = require('../../controllers/AdminUserController');
 
 const router = express.Router();
 
@@ -7,9 +7,9 @@ const router = express.Router();
 router.route("/").get(userController.list).post(userController.create);
 
 router
-  .route("/:userId")
-  .get(userController.get)
-  .put(userController.replace)
-  .delete(userController.remove);
+    .route("/:userId")
+    .get(userController.get)
+    .put(userController.replace)
+    .delete(userController.remove);
 
 module.exports = router;
