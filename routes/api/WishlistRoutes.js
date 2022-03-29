@@ -1,3 +1,9 @@
+/**
+ * @Author  Jay Bipinchandra Patel
+ * @Banner  B00886902
+ * @NetID   jy439129
+ * @EmailId jy439129@dal.ca
+ */
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
