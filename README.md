@@ -1,13 +1,22 @@
 # Assignment 3 (Backend)
 
 * *Date Created*: 22 MAR 2022
-* *Last Modification Date*: 27 MAR 2022
-* *Deployed Web Application URL*: <>
-* *Gitlab URL*: <>
+* *Last Modification Date*: 28 MAR 2022
+* *Deployed Web Application URL*: <https://csci-5709-course-hub-backend.herokuapp.com/>
+* *Gitlab URL*: <https://git.cs.dal.ca/apethani/csci5709-group7-backend>
 
 ## Authors
 
 * [Abhishek Pareshbhai Pethani](ab823206@dal.ca) - *(Maintainer)*
+
+## My Work
+
+### Files (CourseReview)
+```
+The files which i have created as a part of this features are as follow:
+1. courseReview.js    		(available at: models/)
+2. reviews.js 		        (available at: routes/api/)
+```
 
 ## Built With
 
