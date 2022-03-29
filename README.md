@@ -14,8 +14,8 @@
 ### Files (CourseReview)
 ```
 The files which i have created as a part of this features are as follow:
-1. courseReview.js    		(available at: models/)
-2. reviews.js 		        (available at: routes/api/)
+1. courseReview.js  (available at: models/)
+2. reviews.js       (available at: routes/api/)
 ```
 
 ## Built With
