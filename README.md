@@ -28,7 +28,3 @@ The files which i have created as a part of this features are as follow:
 ## Sources Used
 
 The most of the code in the reviews.js and courseReview.js file was created by adapting the code from tutoial 5's and tutorial 7's lecture video available on brightspace.
-
-
-
-
