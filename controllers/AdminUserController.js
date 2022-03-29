@@ -1,4 +1,4 @@
-const UserModel = require("../models/AdminUserModel");
+const UserModel = require("../models/usersModel");
 
 
 /** Provides list of users */
