@@ -1,3 +1,7 @@
+/*=======================================================
+ Author: [Sourav Malik] (sr343164@dal.ca)
+========================================================= */
+
 const express = require('express');
 const userController = require('../../controllers/AdminUserController');
 
