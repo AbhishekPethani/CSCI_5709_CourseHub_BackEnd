@@ -53,3 +53,5 @@
 ## Sources Used
 
 The most of the code in the courses.js and courseDetails.js file was created by adapting the code from tutoial 5's and tutorial 7's lecture video available on brightspace.
+
+Majority of the code written to develop APIs for disounts and user authentication features have been refered from tutorial 5 and tutorial 7
