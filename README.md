@@ -37,10 +37,10 @@
 2. users.js       (available at: routes/api/)
 ```
 ### Feature (Discounts)
-#### Author - Abhishek Pareshbhai Pethani
+#### Author - Ridampreet Singh Jaggi
 ```
 1. couponModel.js  (available at: models/)
-2. coupon.js       (available at: routes/api/)
+2. coupons.js       (available at: routes/api/)
 ```
 
 ## Built With
