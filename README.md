@@ -22,6 +22,14 @@
 2. courses.js       (available at: routes/api/)
 ```
 
+
+### Feature (Course Review)
+#### Author - Abhishek Pareshbhai Pethani
+```
+1. courseReview.js  (available at: models/)
+2. reviews.js       (available at: routes/api/)
+```
+
 ## Built With
 
 - [NodeJS](https://nodejs.org/en/docs/) - The backend framework used to develop back end components of this application.
