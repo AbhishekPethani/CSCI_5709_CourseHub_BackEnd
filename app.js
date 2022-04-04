@@ -7,6 +7,7 @@ const adminUserRoute = require("./routes/api/AdminUserRoute");
 const wishilistRoutes = require("./routes/api/WishlistRoutes");
 const userRoute = require("./routes/api/users");
 const couponsRoute = require("./routes/api/coupons");
+const cartRoute = require("./routes/api/cart");
 const cors = require("cors");
 
 const options = {
@@ -42,5 +43,6 @@ app.use("/authenticate", userRoute);
 app.use("/coupons", couponsRoute);
 app.use("/admin/course", adminCourseRoute);
 app.use("/admin/user", adminUserRoute);
+app.use("/cart", cartRoute);
 
 module.exports = app;
