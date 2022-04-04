@@ -1,5 +1,8 @@
-const UserModel = require("../models/AdminUserModel");
+/*=======================================================
+ Author: [Sourav Malik] (sr343164@dal.ca)
+========================================================= */
 
+const UserModel = require("../models/usersModel");
 
 /** Provides list of users */
 exports.list = async (req, res, next) => {

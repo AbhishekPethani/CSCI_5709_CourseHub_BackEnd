@@ -1,3 +1,6 @@
+/*=======================================================
+ Author: [Ridampreet Singh Jaggi] [rd285404@dal.ca]
+========================================================= */
 const express = require("express");
 const mongoose = require("mongoose");
 
