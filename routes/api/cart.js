@@ -55,7 +55,7 @@ router.get("/:userId", (req, res) => {
         return res.status(200).json({
             message: "Cart Items retrieved successfully!",
             success: true,
-            courses: result,
+            items: items,
             cartTotal: cartTotal
         })
     }).catch(error => {
@@ -73,13 +73,15 @@ router.post("/add", (req, res) => {
     const courseName = req.body.courseName
     const courseImage = req.body.courseImage
     const coursePrice = req.body.coursePrice
+    const courseCategory = req.body.courseCategory
 
     cart.updateOne({ userId: userId }, {
         $addToSet: {
             items: [{
                 courseName: courseName,
                 courseImage: courseImage,
-                coursePrice: coursePrice
+                coursePrice: coursePrice,
+                courseCategory: courseCategory
             }]
         }
     }, { safe: true, upsert: true }, function (err) {
