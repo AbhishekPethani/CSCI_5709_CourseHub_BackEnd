@@ -34,7 +34,7 @@ router.get("/topics", async(req, res) => {
 });
 
 router.get("/topic/:topicId", async(req, res) => {
-    topicCollection.findOne({topicId: req.params.topicId}).exec().then(result => {
+    topicCollection.findOne({_id: req.params.topicId}).exec().then(result => {
         return res.status(200).json({
             success: true,
             topic: result
@@ -48,8 +48,7 @@ router.get("/topic/:topicId", async(req, res) => {
 });
 
 router.get("/comments/:topicId", async(req, res) => {
-    const topicId = req.params.topicId;
-    commentCollection.find({topicId: topicId}).exec().then(result => {
+    commentCollection.find({topicId: req.params.topicId}).exec().then(result => {
         return res.status(200).json({
             success: true,
             comments: result
