@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const reviewRoute = require("./routes/api/reviews");
+const orderRoute = require("./routes/api/orders");
 const courseRoute = require("./routes/api/courses");
 const adminCourseRoute = require("./routes/api/AdminCourseRoute");
 const adminUserRoute = require("./routes/api/AdminUserRoute");
@@ -45,6 +46,6 @@ app.use("/coupons", couponsRoute);
 app.use("/admin/course", adminCourseRoute);
 app.use("/admin/user", adminUserRoute);
 app.use("/cart", cartRoute);
-app.use("/discussion", discussionThreadRoute);
+app.use("/order", orderRoute);
 
 module.exports = app;
