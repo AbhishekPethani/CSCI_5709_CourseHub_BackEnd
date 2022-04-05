@@ -57,4 +57,34 @@ router.post("/add", (req, res) => {
       });
     });
 });
+router.delete("/coupons/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const existingCoupon = await coupon.findByIdAndRemove(id).exec();
+    const message = existingCoupon ? existingCoupon : { error: "coupon does not exist" };
+    res.status(200).send(message);
+  } catch (error) {
+    next(error);
+  }
+});
+router.put("/coupons/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const payload = req.body;
+
+    if (!payload) {
+      res.status(400).send({ error: "missing payload" });
+    }
+    const existingCoupon = await coupon.findByIdAndUpdate(id, {
+      couponCode: payload.couponCode,
+      value: payload.value,
+    }).exec();
+
+    const message = existingCoupon ? existingCoupon : { error: "coupon does not exist" };
+    res.status(200).send(message);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;

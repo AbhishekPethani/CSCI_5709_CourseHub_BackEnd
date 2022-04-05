@@ -46,5 +46,6 @@ app.use("/admin/course", adminCourseRoute);
 app.use("/admin/user", adminUserRoute);
 app.use("/cart", cartRoute);
 app.use("/discussion", discussionThreadRoute);
+app.use("/admin/discount", couponsRoute);
 
 module.exports = app;
