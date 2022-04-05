@@ -8,8 +8,33 @@ const router = express.Router()
 router.use(bodyParser.json());
 
 const orderHistory = require('../../models/orderHistory')
+const activeOrder = require('../../models/activeOrder')
 
-router.get("/:email", (req, res) => { 
+router.get("/active/:email", (req, res) => { 
+    // fetch all the order history for specified email id from the database
+    activeOrder.find({ email: req.params.email }).exec().then(result => {
+        console.log(result)
+        if(! result.length) {
+            return res.status(404).json({
+                message: "No active orders are available for " + req.params.email,
+                success: false,
+            })    
+        }
+        return res.status(200).json({
+            message: "Active orders for the " + req.params.email + " are retrieved successfully!",
+            success: true,
+            orderHistory: result
+        })
+    }).catch(error => {
+        console.log(error)
+        return res.status(500).json({
+            message:"Internal server errors!!", 
+            success:"false"
+        })
+    })
+})
+
+router.get("/history/:email", (req, res) => { 
     // fetch all the order history for specified email id from the database
     orderHistory.find({ email: req.params.email }).exec().then(result => {
         console.log(result)
