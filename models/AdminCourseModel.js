@@ -14,7 +14,7 @@ const courseSchema = new mongoose.Schema(
       maxlength: 120,
       trim: true,
     },
-    authorName: {
+    courseAuthor: {
       type: String,
       maxlength: 120,
       trim: true,
@@ -30,6 +30,9 @@ const courseSchema = new mongoose.Schema(
     courseCategory: {
       type: String,
       required: true
+    },
+    courseImage: {
+      type: String
     }
   },
   {
@@ -43,11 +46,12 @@ courseSchema.method({
     const fields = [
       "id",
       "courseName",
-      "authorName",
+      "courseAuthor",
       "courseDescription",
       "coursePrice",
       "courseCategory",
-      "createdAt",
+      "courseImage",
+      "createdAt"
     ];
 
     fields.forEach((field) => {
