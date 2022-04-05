@@ -33,6 +33,20 @@ router.get("/topics", async(req, res) => {
     });
 });
 
+router.get("/topic/:topicId", async(req, res) => {
+    topicCollection.findOne({topicId: req.params.topicId}).exec().then(result => {
+        return res.status(200).json({
+            success: true,
+            topic: result
+        });
+    }).catch(err => {
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error."
+        });
+    });
+});
+
 router.get("/comments/:topicId", async(req, res) => {
     const topicId = req.params.topicId;
     commentCollection.find({topicId: topicId}).exec().then(result => {
