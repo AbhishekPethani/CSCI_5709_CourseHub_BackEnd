@@ -23,7 +23,7 @@ router.get("/active/:email", (req, res) => {
         return res.status(200).json({
             message: "Active orders for the " + req.params.email + " are retrieved successfully!",
             success: true,
-            orderHistory: result
+            activeOrder: result
         })
     }).catch(error => {
         console.log(error)
