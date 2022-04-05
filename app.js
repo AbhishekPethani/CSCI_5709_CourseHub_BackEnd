@@ -9,6 +9,7 @@ const userRoute = require("./routes/api/users");
 const couponsRoute = require("./routes/api/coupons");
 const cartRoute = require("./routes/api/cart");
 const cors = require("cors");
+const discussionThreadRoute = require("./routes/api/DiscussionThreadRoutes");
 
 const options = {
   allowedHeaders: ["Origin", "Content-Type", "Accept", "Authorization"],
@@ -44,5 +45,6 @@ app.use("/coupons", couponsRoute);
 app.use("/admin/course", adminCourseRoute);
 app.use("/admin/user", adminUserRoute);
 app.use("/cart", cartRoute);
+app.use("/discussion", discussionThreadRoute);
 
 module.exports = app;
