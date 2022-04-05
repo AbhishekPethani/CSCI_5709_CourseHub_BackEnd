@@ -75,7 +75,7 @@ router.post("/add", (req, res) => {
     const coursePrice = req.body.coursePrice
 
     cart.updateOne({ userId: userId }, {
-        $push: {
+        $addToSet: {
             items: [{
                 courseName: courseName,
                 courseImage: courseImage,

@@ -10,6 +10,7 @@ const userRoute = require("./routes/api/users");
 const couponsRoute = require("./routes/api/coupons");
 const cartRoute = require("./routes/api/cart");
 const cors = require("cors");
+const discussionThreadRoute = require("./routes/api/DiscussionThreadRoutes");
 
 const options = {
   allowedHeaders: ["Origin", "Content-Type", "Accept", "Authorization"],
