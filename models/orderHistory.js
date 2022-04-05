@@ -3,12 +3,13 @@
 ========================================================= */
 const mongoose = require('mongoose')
 
-const courseReviewSchema = {
+const orderHistorySchema = {
     _id : mongoose.Schema.Types.ObjectId,
-    courseName : String,
-    userName : String,
-    stars : Number,
-    description : String
+    courseName : String, 
+    date : Date,
+    amount : Number,
+    status : String,
+    email: String
 }
 
-module.exports = mongoose.model("Reviews", courseReviewSchema)
+module.exports = mongoose.model("ordersHistory", orderHistorySchema)

@@ -3,12 +3,10 @@
 ========================================================= */
 const mongoose = require('mongoose')
 
-const courseReviewSchema = {
+const activeOrderSchema = {
     _id : mongoose.Schema.Types.ObjectId,
-    courseName : String,
-    userName : String,
-    stars : Number,
-    description : String
+    status : String,
+    email: String
 }
 
-module.exports = mongoose.model("Reviews", courseReviewSchema)
+module.exports = mongoose.model("ActiveOrder", activeOrderSchema)
