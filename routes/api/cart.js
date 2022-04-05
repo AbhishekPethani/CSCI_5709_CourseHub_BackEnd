@@ -73,7 +73,7 @@ router.post("/add", (req, res) => {
     const courseName = req.body.courseName
     const courseImage = req.body.courseImage
     const coursePrice = req.body.coursePrice
-    const courseCategory = req.body.courseCategory
+    const courseAuthor = req.body.courseAuthor
 
     cart.updateOne({ userId: userId }, {
         $addToSet: {
@@ -81,7 +81,7 @@ router.post("/add", (req, res) => {
                 courseName: courseName,
                 courseImage: courseImage,
                 coursePrice: coursePrice,
-                courseCategory: courseCategory
+                courseAuthor: courseAuthor
             }]
         }
     }, { safe: true, upsert: true }, function (err) {
