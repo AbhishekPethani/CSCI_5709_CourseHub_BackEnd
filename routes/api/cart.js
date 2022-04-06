@@ -40,9 +40,11 @@ router.get("/:userId", (req, res) => {
     // fetch all cart items from the database
     cart.find({ userId: req.params.userId }).exec().then(result => {
         if (!result.length) {
-            return res.status(404).json({
-                message: "No items found",
-                success: false,
+            return res.status(204).json({
+            message: "Cart Empty",
+            success: true,
+            items: [],
+            cartTotal: 0
             })
         }
         // console.log(result[0].items)
