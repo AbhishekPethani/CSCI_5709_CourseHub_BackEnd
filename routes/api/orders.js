@@ -59,6 +59,7 @@ router.get("/history/:email", (req, res) => {
     })
 })
 
+
 router.post("/add", (req, res) => {
     const courseName = req.body.courseName
     const date = req.body.date
@@ -75,6 +76,7 @@ router.post("/add", (req, res) => {
         email
     }) 
 
+    //save order to orderhistory table
     order.save().then(result => {
         return res.status(201).json({
             message: "Order Placed",
