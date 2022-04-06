@@ -40,9 +40,11 @@ router.get("/:userId", (req, res) => {
     // fetch all cart items from the database
     cart.find({ userId: req.params.userId }).exec().then(result => {
         if (!result.length) {
-            return res.status(404).json({
-                message: "No items found",
-                success: false,
+            return res.status(204).json({
+            message: "Cart Empty",
+            success: true,
+            items: [],
+            cartTotal: 0
             })
         }
         // console.log(result[0].items)
@@ -55,7 +57,7 @@ router.get("/:userId", (req, res) => {
         return res.status(200).json({
             message: "Cart Items retrieved successfully!",
             success: true,
-            courses: result,
+            items: items,
             cartTotal: cartTotal
         })
     }).catch(error => {
@@ -73,13 +75,15 @@ router.post("/add", (req, res) => {
     const courseName = req.body.courseName
     const courseImage = req.body.courseImage
     const coursePrice = req.body.coursePrice
+    const courseAuthor = req.body.courseAuthor
 
     cart.updateOne({ userId: userId }, {
         $addToSet: {
             items: [{
                 courseName: courseName,
                 courseImage: courseImage,
-                coursePrice: coursePrice
+                coursePrice: coursePrice,
+                courseAuthor: courseAuthor
             }]
         }
     }, { safe: true, upsert: true }, function (err) {

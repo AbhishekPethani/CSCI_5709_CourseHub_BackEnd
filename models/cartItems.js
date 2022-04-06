@@ -8,7 +8,8 @@ const cartItemSchema = {
     _id : mongoose.Schema.Types.ObjectId,
     courseName : String,
     courseImage : String,
-    coursePrice : String
+    coursePrice : String,
+    courseAuthor: String
 };
 
 const cartSchema = {
