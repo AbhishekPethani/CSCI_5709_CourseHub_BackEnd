@@ -62,11 +62,11 @@ router.get("/history/:email", (req, res) => {
 
 
 router.post("/add", (req, res) => {
-    const courseName = req.body.courseName
+    const courseName = req.body[0].courseName
     const date = new Date()
-    const amount = req.body.amount
-    const status = req.body.status
-    const email = req.body.email
+    const amount = req.body[0].amount
+    const status = req.body[0].status
+    const email = req.body[0].email
 
     const order = new orderHistory({
         _id: new mongoose.Types.ObjectId(),
