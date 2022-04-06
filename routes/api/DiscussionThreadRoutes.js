@@ -34,7 +34,7 @@ router.get("/topics", async(req, res) => {
 });
 
 router.get("/topic/:topicId", async(req, res) => {
-    topicCollection.findOne({topicId: req.params.topicId}).exec().then(result => {
+    topicCollection.findOne({_id: req.params.topicId}).exec().then(result => {
         return res.status(200).json({
             success: true,
             topic: result
@@ -47,9 +47,24 @@ router.get("/topic/:topicId", async(req, res) => {
     });
 });
 
+router.delete("/topic/:topicId", async(req, res) => {
+    topicCollection.deleteOne({_id: req.params.topicId}).exec().then((result) => {
+        commentCollection.deleteMany({topicId: req.params.topicId}).exec().then((result1) => {
+        });
+        return res.status(200).json({
+            success: true,
+            message: "topic deleted."
+        });
+    }).catch((error) => {
+        return res.status(400).json({
+            success: false,
+            message: "Bad Request."
+        });
+    });
+});
+
 router.get("/comments/:topicId", async(req, res) => {
-    const topicId = req.params.topicId;
-    commentCollection.find({topicId: topicId}).exec().then(result => {
+    commentCollection.find({topicId: req.params.topicId}).exec().then(result => {
         return res.status(200).json({
             success: true,
             comments: result
@@ -59,6 +74,21 @@ router.get("/comments/:topicId", async(req, res) => {
             success: false,
             message: "Bad Request."
         });
+    });
+});
+
+router.delete("/comment/:commentId", async(req, res) => {
+    commentCollection.deleteOne({_id: req.params.commentId}).exec().then((result) => {
+        return res.status(200).json({
+            success: true,
+            message: "comment deleted."
+        })
+    }).catch((error) => {
+        console.log(error);
+        return res.status(400).json({
+            success: false,
+            message: "Bad Request."
+        })
     });
 });
 
