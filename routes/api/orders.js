@@ -1,5 +1,6 @@
 /*=======================================================
  Author: [Abhishek Pareshbhai Pethani] (ab823206@dal.ca)
+ Author: [Aditya Bakshi] (aditya.bakshi@dal.ca)
 ========================================================= */
 const express = require('express')
 const mongoose = require('mongoose')
