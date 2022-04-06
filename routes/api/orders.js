@@ -62,7 +62,7 @@ router.get("/history/:email", (req, res) => {
 
 router.post("/add", (req, res) => {
     const courseName = req.body.courseName
-    const date = req.body.date
+    const date = new Date()
     const amount = req.body.amount
     const status = req.body.status
     const email = req.body.email
