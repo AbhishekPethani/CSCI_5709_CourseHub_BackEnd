@@ -29,6 +29,32 @@ router.get("/coupons", (req, res) => {
       });
     });
 });
+
+
+router.get("/:couponcode", (req, res) => {
+  coupon
+    .find({couponCode: req.params.couponcode})
+    .exec()
+    .then(result => {
+      if (result || result.length) {
+        return res.status(200).json({
+          message: "Coupon retrived!!",
+          success: true,
+          coupon: result
+        });
+      }
+    })
+    .catch(err => {
+      console.log(err => {
+        return res.status(500).json({
+          message: "Internal server error",
+          success: false
+        });
+      });
+    });
+});
+
+
 router.post("/add", (req, res) => {
   var couponCode = req.body.name;
   var value = req.body.value;
