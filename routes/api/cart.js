@@ -102,8 +102,6 @@ router.delete("/delete", (req, res) => {
     try {
         const userId = req.body.userId
         const courseName = req.body.courseName
-        console.log(userId)
-        console.log(courseName)
 
         cart.updateOne({ userId: userId }, {
             $pull: {
@@ -129,6 +127,29 @@ router.delete("/delete", (req, res) => {
         })
     }
 })
+
+router.delete("/clear", (req, res) => {
+    const userId = req.body.userId
+    cart
+      .deleteOne( { userId : userId } )
+      .then(result => {
+        if (cart || cart.length) {
+          return res.status(200).json({
+            message: "Cart cleared",
+            success: true,
+            users: result
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err => {
+          return res.status(500).json({
+            message: "Internal server error",
+            success: false
+          });
+        });
+      });
+  });
 
 
 module.exports = router;
