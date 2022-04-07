@@ -57,4 +57,23 @@ router.get("/:courseName", (req, res) => {
     })
 })
 
+router.post("/adduser", (req, res) => {
+    const purchasedBy = req.body.userName
+    const courseName = req.body.courseName
+
+    courses.updateOne({ courseName: courseName }, {
+        $addToSet: {
+            purchasedBy: purchasedBy
+        }
+    }, { safe: true, upsert: true }, function (err) {
+        if (err) {
+            console.log(err)
+        }
+        else {
+            res.status(200).json('User added to course')
+        }
+
+    })
+})
+
 module.exports = router;
