@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const orderHistorySchema = {
     _id : mongoose.Schema.Types.ObjectId,
-    courseName : String, 
+    courseName : Array, 
     date : Date,
     amount : Number,
     status : String,
