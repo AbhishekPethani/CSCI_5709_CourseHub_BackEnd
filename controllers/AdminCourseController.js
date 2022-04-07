@@ -67,6 +67,7 @@ exports.replace = async (req, res, next) => {
       courseAuthor: payload.courseAuthor,
       courseName: payload.courseName,
       courseDescription: payload.courseDescription,
+      courseDetails: payload.courseDetails,
       coursePrice: payload.coursePrice,
       courseCategory: payload.courseCategory,
     }).exec();

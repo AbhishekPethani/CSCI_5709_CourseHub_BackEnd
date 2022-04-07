@@ -24,6 +24,11 @@ const courseSchema = new mongoose.Schema(
       maxlength: 1200,
       trim: true,
     },
+    courseDetails: {
+      type: String,
+      maxlength: 1200,
+      trim: true,
+    },
     coursePrice: {
       type: mongoose.Decimal128,
     },
@@ -48,6 +53,7 @@ courseSchema.method({
       "courseName",
       "courseAuthor",
       "courseDescription",
+      "courseDetails",
       "coursePrice",
       "courseCategory",
       "courseImage",
