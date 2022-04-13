@@ -43,6 +43,15 @@
 2. coupons.js       (available at: routes/api/)
 ```
 
+### Feature (Course Management)
+#### Author - Sourav Malik
+```
+### Files
+- AdminCourseController.js
+- AdminCourseModel.js
+- AdminCourseRoute.js
+
+
 ## Built With
 
 - [NodeJS](https://nodejs.org/en/docs/) - The backend framework used to develop back end components of this application.
