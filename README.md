@@ -52,6 +52,14 @@
 - AdminCourseRoute.js
 ```
 
+### Feature (User Management)
+#### Author - Sourav Malik
+```
+### Files
+- AdminUserController.js
+- AdminUserRoute.js
+```
+
 ## Built With
 
 - [NodeJS](https://nodejs.org/en/docs/) - The backend framework used to develop back end components of this application.
