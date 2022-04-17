@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cors(options));
 
 console.log(adminCourseRoute)
-const mongoDBUrl = "mongodb+srv://abhishek:abhishek@cluster0.2spzc.mongodb.net/CourseHub?retryWrites=true&w=majority";
+const mongoDBUrl = "DATABASE_URL";
 mongoose
   .connect(mongoDBUrl, { useNewUrlParser: true })
   .then(() => {
